@@ -17,4 +17,11 @@ jobs:
           print(platform.processor())
         # import platform 和 print(platform.processor())：这是Python代码，当此步骤运行时，它会导入Python的platform模块，并打印出当前系统的处理器信息。
         shell: python  # shell: python：这是告诉GitHub Actions使用Python解释器来运行Python代码的方式。
-
+  run_windwos_command:
+    runs-on: windows-latest
+    steps:
+      - name: Directory PowerShell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
