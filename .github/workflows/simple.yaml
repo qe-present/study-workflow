@@ -19,6 +19,7 @@ jobs:
         shell: python  # shell: python：这是告诉GitHub Actions使用Python解释器来运行Python代码的方式。
   run_windwos_command:
     runs-on: windows-latest
+    needs: ["run_shell_command"]
     steps:
       - name: Directory PowerShell
         run: Get-Location
