@@ -1,6 +1,14 @@
 name: Actions Workflow
 on:
-  push
+  push:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: Who to greet in the log
+        required: true
+        default: 'World'
+        type: string
+
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
