@@ -7,15 +7,22 @@ on:
         required: true
         default: 'World'
         type: string
-        
+
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+
       - name: list files
         run: |
           pwd
-          ls
+          ls -a
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: List files after checkout
+        run: |
+          pwd
+          ls -a
       - name: Simple Js Action
         id: great
         uses: actions/hello-world-javascript-action@main
