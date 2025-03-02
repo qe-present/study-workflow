@@ -28,10 +28,10 @@ jobs:
         run: |
           pwd
           ls -a
-      - name: Simple Js Action
-        id: great
-        uses: actions/hello-world-javascript-action@main
-        with:
-          who-to-greet: ${{ inputs.who-to-greet }}
+#      - name: Simple Js Action
+#        id: great
+#        uses: actions/hello-world-javascript-action@main
+#        with:
+#          who-to-greet: ${{ inputs.who-to-greet }}
       - name: Log greeting Title
         run: echo "${{steps.great.outputs.time}}"
