@@ -1,18 +1,17 @@
 name: Actions Workflow
-on:
-  workflow_dispatch:
-    inputs:
-      who-to-greet:
-        description: Who to greet in the log
-        required: true
-        default: 'World'
-        type: string
+on: [push,pull_request]
+#  workflow_dispatch:
+#    inputs:
+#      who-to-greet:
+#        description: Who to greet in the log
+#        required: true
+#        default: 'World'
+#        type: string
 
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-
       - name: list files
         run: |
           pwd
