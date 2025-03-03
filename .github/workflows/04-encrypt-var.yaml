@@ -8,7 +8,7 @@ on:
         default: true
         type: boolean
 env:
-  MY_NAME: ${{secrets.MF_ENV}}
+  MY_NAME: ${{secrets.WF_ENV}}
 jobs:
   log-env:
     runs-on: ubuntu-latest
