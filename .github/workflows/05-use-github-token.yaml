@@ -1,4 +1,4 @@
-name: github-token
+name: 05-github-token
 on:
   workflow_dispatch:
     inputs:
