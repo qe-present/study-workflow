@@ -1,6 +1,12 @@
 name: Env Variables
 on:
-  [push]
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 运行03
+        required: true
+        default: true
+        type: boolean
 env:
   MY_NAME: "GitHub Actions" # MY_NAME: "GitHub Actions"：这是一个全局环境变量，它可以在整个工作流程中使用。
 jobs:

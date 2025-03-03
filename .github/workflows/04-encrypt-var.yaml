@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       who-to-greet:
-        description: Who to greet in the log
+        description: 运行04
         required: true
-        default: 'World'
-        type: string
+        default: true
+        type: boolean
 env:
   MY_NAME: ${{secrets.MF_ENV}}
 jobs:
