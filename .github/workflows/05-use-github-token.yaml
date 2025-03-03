@@ -42,6 +42,7 @@ jobs:
           git pull
           ls -a
           echo $RANDOM >> random.txt
-          git add random.txt
+          ls -a
+          git add -A
           git commit -m "add random.txt"
           git push
