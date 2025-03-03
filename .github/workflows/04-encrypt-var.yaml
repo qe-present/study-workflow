@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Print Environment Variables
         run: |
-          echo "MY_NAME:$MY_NAME"
+          echo "MY_NAME: $MY_NAME"
