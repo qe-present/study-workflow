@@ -1,0 +1,18 @@
+name: 04-encrypt-var
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: Who to greet in the log
+        required: true
+        default: 'World'
+        type: string
+env:
+  MY_NAME: ${{secrets.MF_ENV}}
+jobs:
+  log-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Environment Variables
+        run: |
+          echo "MY_NAME:$MY_NAME"
