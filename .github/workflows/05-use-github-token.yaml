@@ -24,3 +24,23 @@ jobs:
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
             }' \
           --fail
+  push_random_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: push
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git config  --global user.name "github-actions"
+          git config  --global user.email "a@qq.com"
+          git fetch
+          git checkout -b master
+          git branch --set-upstream-to origin/master
+          git pull
+          ls -a
+          echo $RANDOM >> random.txt
+          git add random.txt
+          git commit -m "add random.txt"
+          git push
