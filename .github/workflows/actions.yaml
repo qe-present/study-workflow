@@ -18,6 +18,8 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: payload
+        run: echo ${{ github.event.client_payload.env }}
       - name: list files
         run: |
           pwd
@@ -26,18 +28,10 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{github.token}}"
-#          git clone git@github:@GITHUB_REPOSITORY
-#          git checkout $GITHUB_SHA
       - name: Checkout
         uses: actions/checkout@v4
       - name: List files after checkout
         run: |
           pwd
           ls -a
-#      - name: Simple Js Action
-#        id: great
-#        uses: actions/hello-world-javascript-action@main
-#        with:
-#          who-to-greet: ${{ inputs.who-to-greet }}
-      - name: Log greeting Title
-        run: echo "${{steps.great.outputs.time}}"
+
