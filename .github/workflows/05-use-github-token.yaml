@@ -7,7 +7,7 @@ on:
         required: true
         default: true
         type: boolean
-job:
+jobs:
   create_issue:
     runs-on: ubuntu-latest
     permissions:
