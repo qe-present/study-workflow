@@ -10,6 +10,7 @@ on:
 jobs:
   create_issue:
     runs-on: ubuntu-latest
+    if: github.event.inputs.who-to-greet == 'false'
     permissions:
       issues: write
     steps:
@@ -36,7 +37,7 @@ jobs:
           git config  --global user.name "github-actions"
           git config  --global user.email "a@qq.com"
           git fetch
-          git checkout -b master
+          git checkout main
           git branch --set-upstream-to origin/master
           git pull
           ls -a
