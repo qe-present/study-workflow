@@ -1,0 +1,13 @@
+name: Env Variables
+on:
+  [push]
+env:
+  MY_NAME: "GitHub Actions"
+jobs:
+  log-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log Environment Variables
+        run: echo "Hello, $MY_NAME"
+      - name: Log Environment Variables
+        run: echo "Hello, ${{ env.MY_NAME }}"
