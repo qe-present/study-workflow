@@ -1,4 +1,4 @@
-name: Context testing
+name: 07-Context testing
 on:
   workflow_dispatch:
     inputs:

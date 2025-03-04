@@ -1,4 +1,4 @@
-name: encrypt-decrypt
+name: 06-encrypt-decrypt
 on:
   workflow_dispatch:
     inputs:
