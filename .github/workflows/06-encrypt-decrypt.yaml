@@ -1,0 +1,21 @@
+name: enctypt-decrypt
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 运行06
+        required: true
+        default: true
+        type: boolean
+jobs:
+  encrypt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 获得仓库代码
+      - uses: actions/checkout@v4
+        run: gpg --quiet --batch --yes --decrype --passphrase="$PASSPHASE"
+          --output $HOME/secret.json secret.json.gpg
+        env:
+          PASSPHASE:${{secrets.PASSPHASE}}
+      - name: 打印结果
+        run: cat $HOME/secret.json
