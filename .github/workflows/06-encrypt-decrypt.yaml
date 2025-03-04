@@ -23,4 +23,4 @@ jobs:
           PASSPHRASE: ${{ secrets.PASSPHRASE }}
 
       - name: 打印结果
-        run: cat secret.json
+        run: cat $HOME/secret.json
