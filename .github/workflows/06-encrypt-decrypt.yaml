@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: 获得仓库代码
       - uses: actions/checkout@v4
+
+      - name: 解密文件
         run: gpg --quiet --batch --yes --decrype --passphrase="$PASSPHASE"
           --output $HOME/secret.json secret.json.gpg
         env:
