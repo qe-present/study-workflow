@@ -1,0 +1,19 @@
+name: 08-function-expression
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 运行08
+        required: true
+        default: true
+        type: boolean
+jobs:
+  function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Function Expression
+        run: |
+          echo "Hello, contains('Hello world', 'llo')  ${{ contains('Hello world', 'llo') }}"
+          echo "Hello,startsWith('Hello world', 'He')  ${{ startsWith('Hello world', 'He') }}"
+          echo "Hello,endsWith('Hello world', 'ld')  ${{ endsWith('Hello world', 'ld') }}"
+          echo "Hello, ${{ format('Hello, {0}!', 'Workflow Dispatch') }}"
