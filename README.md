@@ -1,5 +1,7 @@
 # study-workflow
 学习使用github工作流
+# 学习来源
+## [b站](https://www.bilibili.com/video/BV14F411q7De?spm_id_from=333.788.videopod.episodes&vd_source=9a7a74ff1d725acfc83fd3567cd4a7c4)
 # 目录
 - [01-first-workflows](01-first-workflows/01.md)
 - [02-simple-action](02-simple-action/02.md)

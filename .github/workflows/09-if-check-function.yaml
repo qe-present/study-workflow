@@ -1,0 +1,40 @@
+name: 09-if-check-function-function
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 运行09
+        required: true
+        default: true
+        type: boolean
+jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.who-to-greet == true
+    steps:
+      - name: Dump GitHub context # 打印 GitHub 上下文
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: eccho "$GITHUB_CONTEXT"
+      - name: Dump job context
+        if: failure() // 失败时执行
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+      - name: Dump runner context
+        if: always() // 总是执行
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+      - name: Dump strategy context
+        env:
+          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+        run: echo "$STRATEGY_CONTEXT"
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
