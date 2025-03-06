@@ -12,6 +12,8 @@
 - [07-context](07-context/07.md)
 - [08-function-expression](08-function-expression/08.md)
 - [09-if-check-function](09-if-check-function/09.md)
+- [10-use-node](10-use-node/10.md)
+- [11-use-strategy](11-use-strategy/11.md)
 
 ## 形成上面目录的powershell脚本
 ```powershell
