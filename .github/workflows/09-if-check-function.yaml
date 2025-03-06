@@ -10,7 +10,7 @@ on:
 jobs:
   dump_contexts_to_log:
     runs-on: ubuntu-latest
-    if: github.event.inputs.who-to-greet == true
+    if: github.event.inputs.who-to-greet == 'true' # 如果输入的值为true
     steps:
       - name: Dump GitHub context # 打印 GitHub 上下文
         env:
