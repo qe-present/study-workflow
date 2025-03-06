@@ -1,0 +1,21 @@
+name: 10-use-node
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 运行10
+        required: true
+        default: true
+        type: boolean
+jobs:
+  use-node:
+    runs-on: ubuntu-latest
+    steos:
+      - name: print node version
+        run: node -v
+      - name: use node action
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: print node version
+        run: node -v

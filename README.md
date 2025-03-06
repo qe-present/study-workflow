@@ -11,6 +11,7 @@
 - [06-encrypt-decrypt](06-encrypt-decrypt/06.md)
 - [07-context](07-context/07.md)
 - [08-function-expression](08-function-expression/08.md)
+- [09-if-check-function](09-if-check-function/09.md)
 
 ## 形成上面目录的powershell脚本
 ```powershell
