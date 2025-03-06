@@ -10,7 +10,6 @@ on:
 jobs:
   use-more-node:
     strategy:
-      parallel: 2  # 并行执行两个任务
       fail-fast: false  # 不要立即停止所有任务
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
