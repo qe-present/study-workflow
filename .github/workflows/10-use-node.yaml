@@ -10,7 +10,7 @@ on:
 jobs:
   use-node:
     runs-on: ubuntu-latest
-    steos:
+    steps:
       - name: print node version
         run: node -v
       - name: use node action
