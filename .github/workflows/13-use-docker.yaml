@@ -1,0 +1,20 @@
+name: 13-use-docker
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 运行13
+        required: true
+        default: true
+        type: boolean
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:22-alpine3.20
+    steps:
+        - name: print node version
+          run: |
+            node -v
+            car /etc/os-release
+            
