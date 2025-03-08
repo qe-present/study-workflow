@@ -16,5 +16,5 @@ jobs:
         - name: print node version
           run: |
             node -v
-            car /etc/os-release
+            cat /etc/os-release
             
