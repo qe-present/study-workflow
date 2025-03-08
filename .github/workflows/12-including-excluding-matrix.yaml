@@ -15,11 +15,9 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node-version: [21, 22, 23]
         include:
-          - os: ubuntu-latest
+          - os: macos-latest
             node-version: 21
-          - os: windows-latest
-            node-version: 22
-            is_windows_22: "true"
+            is_ macos_21: "true"
         exclude:
           - os: ubuntu-latest
             node-version: 21
@@ -27,7 +25,7 @@ jobs:
             node-version: 22
     runs-on: ${{ matrix.os }}
     env:
-      IS_WINDOWS_22: ${{ matrix.is_windows_22 }}
+      IS_MACOS_21: ${{ matrix.is_macos_21 }}
     steps:
       - name: print node version
         run: node -v
@@ -38,4 +36,4 @@ jobs:
       - name: print node version
         run: |
           node -v
-          echo "IS_WINDOWS_22: $IS_WINDOWS_22"
+          echo "IS_MACOS_21: $IS_MACOS_21"
