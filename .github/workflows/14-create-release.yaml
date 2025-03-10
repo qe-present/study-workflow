@@ -15,4 +15,4 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: This is a release for version ${{ github.ref }}
-          file: 14-create-release/*
+          files: 14-create-release/*
