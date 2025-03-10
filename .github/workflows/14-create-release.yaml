@@ -1,0 +1,20 @@
+name: 14-create-release
+on:
+  push:
+    tag:
+      'v*'
+jobs:
+  create-release:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        with:
+          files: "14-create-release/**"
+        body: |
+          This is a release for version ${{ github.ref }}.
