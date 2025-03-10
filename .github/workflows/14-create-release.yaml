@@ -15,6 +15,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          body: This is a release for version ${{ github.ref }}
+          name: create-release-${{ github.ref_name }}
+          tag_name: create-release
+          body: This is a release for version ${{ github.ref_name }}
           files: 14-create-release/*
